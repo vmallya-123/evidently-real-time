@@ -1,0 +1,20 @@
+column_mapping:
+  categorical_features:
+  - cat_feature_1
+  - cat_feature_2
+  numerical_features:
+  - num_feature_1
+  - num_feature_2
+  
+data_format:
+  header: true
+  separator: ','
+service:
+  calculation_period_sec: 10
+  min_reference_size: 30
+  monitors:
+  - data_drift
+  moving_reference: false
+  reference_path: .local_path_of_reference.csv
+  use_reference: true
+  window_size: 30
