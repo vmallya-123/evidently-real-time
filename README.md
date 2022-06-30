@@ -44,5 +44,11 @@ background_tasks.add_task(SERVICE.iterate, features)
 To run the app please setup virtual env and run the following
 
 ```
-
+uvicorn main:app
 ```
+
+You can see the metrics by accessing http://127.0.0.1:8000/metrics  
+
+They should appear once you have triggered enough requests to meet the minimum window size
+
+The grafana dashboard is available under dashboards
