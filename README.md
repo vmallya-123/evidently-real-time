@@ -26,7 +26,7 @@ async def startup_event():
     SERVICE = getDriftMonitoringService(config)
 ```
 
-It needs a config file an example of which is shown in config/data-drift-config.yaml
+It needs a config file an example of which is shown in fast-api-app/data-drift-config.yaml
 
 ```
 from fastapi import FastAPI, BackgroundTasks
@@ -39,4 +39,10 @@ features = retrieveFeaturesFromRequest(data.dict())
 background_tasks.add_task(SERVICE.iterate, features)
 ...
 #other stuff like model.predict, return response etc
+```
+
+To run the app please setup virtual env and run the following
+
+```
+
 ```

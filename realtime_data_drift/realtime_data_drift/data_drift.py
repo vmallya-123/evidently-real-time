@@ -66,9 +66,7 @@ class MonitoringService:
 
         if options.use_reference:
             self.reference = reference.iloc[: -options.window_size, :].copy()
-            self.current = reference.iloc[
-                -int(options.window_size - options.window_size / 2) :, :
-            ].copy()
+            self.current = pandas.DataFrame()
         else:
             self.reference = reference.copy()
             self.current = pandas.DataFrame().reindex_like(reference).dropna()
